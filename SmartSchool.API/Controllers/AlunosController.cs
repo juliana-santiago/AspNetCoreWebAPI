@@ -38,19 +38,61 @@ namespace SmartSchool.API.Controllers
 
         public AlunosController() { }
 
+
+        // api/alunos -> todos os alunos
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(Alunos);
         }
 
-        [HttpGet("{id}")]
+        // api/alunos/byId/{id} -> filtra por Id 
+        [HttpGet("byId/{id}")]
         public IActionResult GetById(int id)
         {
             var aluno = Alunos.FirstOrDefault(a => a.Id == id);
             if (aluno == null) return BadRequest("Aluno não foi encontrado!");
 
             return Ok(aluno);
+        }
+
+        // api/alunos/byNome/{nome}&{sobrenome} -> filtra por Nome
+        [HttpGet("byNome/{nome}&{sobrenome}")]
+        public IActionResult GetByNome(string nome, string sobrenome)
+        {
+            var aluno = Alunos.FirstOrDefault(a => a.Nome.Contains(nome) && a.Sobrenome.Contains(sobrenome));
+            if (aluno == null) return BadRequest("Aluno não foi encontrado!");
+
+            return Ok(aluno);
+        }
+
+        // api/alunos -> Insere um novo registro
+        [HttpPost]
+        public IActionResult Post(Aluno aluno)
+        {
+            return Ok(aluno);
+        }
+
+        // api/alunos -> Atualiza um registro por Id
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, Aluno aluno)
+        {
+            return Ok(aluno);
+        }
+
+
+        // api/alunos -> Atualiza uma informação especifica do registro por Id
+        [HttpPatch("{id}")]
+        public IActionResult Patch(int id, Aluno aluno)
+        {
+            return Ok(aluno);
+        }
+
+        // api/alunos -> Deleta um registro por Id
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            return Ok($"Registro {id} deletado com sucesso!");
         }
     }
 }

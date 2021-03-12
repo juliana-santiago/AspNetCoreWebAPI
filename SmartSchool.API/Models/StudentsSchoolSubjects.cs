@@ -5,18 +5,18 @@ using System.Threading.Tasks;
 
 namespace SmartSchool.API.Models
 {
-    public class AlunoDisciplina
+    public class StudentsSchoolSubjects
     {
-        public AlunoDisciplina(){ } 
-        public AlunoDisciplina(int alunoId,int disciplinaId)
+        public StudentsSchoolSubjects(){ } 
+        public StudentsSchoolSubjects(int alunoId,int disciplinaId)
         {
             this.AlunoId = alunoId;
             this.DisciplinaId = disciplinaId;
         }
 
         public int AlunoId { get; set; }
-        public Aluno Aluno { get; set; }
+        public Student Aluno { get; set; }
         public int DisciplinaId { get; set; }
-        public Disciplina Disciplina { get; set; }
+        public SchoolSubjects Disciplina { get; set; }
     }
 }

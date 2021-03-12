@@ -8,11 +8,11 @@ namespace SmartSchool.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AlunosController : ControllerBase
+    public class StudentsController : ControllerBase
     {
         private readonly SmartContext _context;
 
-        public AlunosController(SmartContext context)
+        public StudentsController(SmartContext context)
         {
             _context = context;
         }
@@ -46,7 +46,7 @@ namespace SmartSchool.API.Controllers
 
         // api/alunos -> Insere um novo registro
         [HttpPost]
-        public IActionResult Post(Aluno aluno)
+        public IActionResult Post(Student aluno)
         {
             _context.Add(aluno);
             _context.SaveChanges();
@@ -55,7 +55,7 @@ namespace SmartSchool.API.Controllers
 
         // api/alunos -> Atualiza um registro por Id
         [HttpPut("{id}")]
-        public IActionResult Put(int id, Aluno aluno)
+        public IActionResult Put(int id, Student aluno)
         {
             var alu = _context.Alunos.FirstOrDefault(a => a.Id == id);
             if (alu == null) return BadRequest("Aluno nao encontrado!");
@@ -67,7 +67,7 @@ namespace SmartSchool.API.Controllers
 
         // api/alunos -> Atualiza uma informação especifica do registro por Id
         [HttpPatch("{id}")]
-        public IActionResult Patch(int id, Aluno aluno)
+        public IActionResult Patch(int id, Student aluno)
         {
             var alu = _context.Alunos.FirstOrDefault(a => a.Id == id);
             if (alu == null) return BadRequest("Aluno nao encontrado!");

@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace SmartSchool.API.Models
 {
-    public class Professor
+    public class Teacher
     {
-        public Professor(){ }
+        public Teacher(){ }
 
-        public Professor(int id, string nome)
+        public Teacher(int id, string nome)
         {
             Id = id;
             Nome = nome;
@@ -17,6 +17,6 @@ namespace SmartSchool.API.Models
 
         public int Id { get; set; }
         public string Nome { get; set; }
-        public IEnumerable<Disciplina> Disciplinas { get; set; }
+        public IEnumerable<SchoolSubjects> Disciplinas { get; set; }
     }
 }

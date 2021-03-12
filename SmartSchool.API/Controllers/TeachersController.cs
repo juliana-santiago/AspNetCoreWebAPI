@@ -8,9 +8,9 @@ namespace SmartSchool.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ProfessoresController : ControllerBase
+    public class TeachersController : ControllerBase
     {
-        public ProfessoresController()
+        public TeachersController()
         {
         }
 

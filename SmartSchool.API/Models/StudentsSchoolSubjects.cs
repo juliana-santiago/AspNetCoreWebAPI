@@ -8,15 +8,15 @@ namespace SmartSchool.API.Models
     public class StudentsSchoolSubjects
     {
         public StudentsSchoolSubjects(){ } 
-        public StudentsSchoolSubjects(int alunoId,int disciplinaId)
+        public StudentsSchoolSubjects(int studentId,int schoolSubjectId)
         {
-            this.AlunoId = alunoId;
-            this.DisciplinaId = disciplinaId;
+            this.StudentId = studentId;
+            this.SchoolSubjectId = schoolSubjectId;
         }
 
-        public int AlunoId { get; set; }
-        public Student Aluno { get; set; }
-        public int DisciplinaId { get; set; }
-        public SchoolSubjects Disciplina { get; set; }
+        public int StudentId { get; set; }
+        public Student Student { get; set; }
+        public int SchoolSubjectId { get; set; }
+        public SchoolSubject SchoolSubject { get; set; }
     }
 }

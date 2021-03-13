@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SmartSchool.API.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SmartSchool.API.Data
 {
@@ -11,15 +8,15 @@ namespace SmartSchool.API.Data
     {
         public SmartContext(DbContextOptions<SmartContext> options) : base(options) { }
 
-        public DbSet<Student> Alunos { get; set; }
-        public DbSet<Teacher> Professsores { get; set; }
-        public DbSet<SchoolSubjects> Disciplinas { get; set; }
-        public DbSet<StudentsSchoolSubjects> AlunosDisciplinas { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Teacher> Teacheres { get; set; }
+        public DbSet<SchoolSubject> SchoolSubject { get; set; }
+        public DbSet<StudentsSchoolSubjects> StudentsSchoolSubjects { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<StudentsSchoolSubjects>()
-                .HasKey(AD => new { AD.AlunoId, AD.DisciplinaId });
+                .HasKey(AD => new { AD.StudentId, AD.SchoolSubjectId });
 
             builder.Entity<Teacher>()
                 .HasData(new List<Teacher>(){
@@ -30,51 +27,51 @@ namespace SmartSchool.API.Data
                     new Teacher(5, "Alexandre"),
                 });
 
-            builder.Entity<SchoolSubjects>()
-                .HasData(new List<SchoolSubjects>{
-                    new SchoolSubjects(1, "Matemática", 1),
-                    new SchoolSubjects(2, "Física", 2),
-                    new SchoolSubjects(3, "Português", 3),
-                    new SchoolSubjects(4, "Inglês", 4),
-                    new SchoolSubjects(5, "Programação", 5)
+            builder.Entity<SchoolSubject>()
+                .HasData(new List<SchoolSubject>{
+                    new SchoolSubject(1, "Math", 1),
+                    new SchoolSubject(2, "Physics", 2),
+                    new SchoolSubject(3, "Portuguese", 3),
+                    new SchoolSubject(4, "English", 4),
+                    new SchoolSubject(5, "Biology", 5)
                 });
 
             builder.Entity<Student>()
                 .HasData(new List<Student>(){
-                    new Student(1, "Marta", "Kent", "33225555"),
-                    new Student(2, "Paula", "Isabela", "3354288"),
-                    new Student(3, "Laura", "Antonia", "55668899"),
-                    new Student(4, "Luiza", "Maria", "6565659"),
-                    new Student(5, "Lucas", "Machado", "565685415"),
-                    new Student(6, "Pedro", "Alvares", "456454545"),
-                    new Student(7, "Paulo", "José", "9874512")
+                    new Student(1, "Marta", "Kent", "933225555"),
+                    new Student(2, "Paula", "Isabela", "973354288"),
+                    new Student(3, "Laura", "Antonia", "955668899"),
+                    new Student(4, "Luiza", "Maria", "9965656959"),
+                    new Student(5, "Lucas", "Machado", "9565685415"),
+                    new Student(6, "Pedro", "Alvares", "9456454545"),
+                    new Student(7, "Paulo", "José", "998745192")
                 });
 
             builder.Entity<StudentsSchoolSubjects>()
                 .HasData(new List<StudentsSchoolSubjects>() {
-                    new StudentsSchoolSubjects() {AlunoId = 1, DisciplinaId = 2 },
-                    new StudentsSchoolSubjects() {AlunoId = 1, DisciplinaId = 4 },
-                    new StudentsSchoolSubjects() {AlunoId = 1, DisciplinaId = 5 },
-                    new StudentsSchoolSubjects() {AlunoId = 2, DisciplinaId = 1 },
-                    new StudentsSchoolSubjects() {AlunoId = 2, DisciplinaId = 2 },
-                    new StudentsSchoolSubjects() {AlunoId = 2, DisciplinaId = 5 },
-                    new StudentsSchoolSubjects() {AlunoId = 3, DisciplinaId = 1 },
-                    new StudentsSchoolSubjects() {AlunoId = 3, DisciplinaId = 2 },
-                    new StudentsSchoolSubjects() {AlunoId = 3, DisciplinaId = 3 },
-                    new StudentsSchoolSubjects() {AlunoId = 4, DisciplinaId = 1 },
-                    new StudentsSchoolSubjects() {AlunoId = 4, DisciplinaId = 4 },
-                    new StudentsSchoolSubjects() {AlunoId = 4, DisciplinaId = 5 },
-                    new StudentsSchoolSubjects() {AlunoId = 5, DisciplinaId = 4 },
-                    new StudentsSchoolSubjects() {AlunoId = 5, DisciplinaId = 5 },
-                    new StudentsSchoolSubjects() {AlunoId = 6, DisciplinaId = 1 },
-                    new StudentsSchoolSubjects() {AlunoId = 6, DisciplinaId = 2 },
-                    new StudentsSchoolSubjects() {AlunoId = 6, DisciplinaId = 3 },
-                    new StudentsSchoolSubjects() {AlunoId = 6, DisciplinaId = 4 },
-                    new StudentsSchoolSubjects() {AlunoId = 7, DisciplinaId = 1 },
-                    new StudentsSchoolSubjects() {AlunoId = 7, DisciplinaId = 2 },
-                    new StudentsSchoolSubjects() {AlunoId = 7, DisciplinaId = 3 },
-                    new StudentsSchoolSubjects() {AlunoId = 7, DisciplinaId = 4 },
-                    new StudentsSchoolSubjects() {AlunoId = 7, DisciplinaId = 5 }
+                    new StudentsSchoolSubjects() {StudentId = 1, SchoolSubjectId = 2 },
+                    new StudentsSchoolSubjects() {StudentId = 1, SchoolSubjectId = 4 },
+                    new StudentsSchoolSubjects() {StudentId = 1, SchoolSubjectId = 5 },
+                    new StudentsSchoolSubjects() {StudentId = 2, SchoolSubjectId = 1 },
+                    new StudentsSchoolSubjects() {StudentId = 2, SchoolSubjectId = 2 },
+                    new StudentsSchoolSubjects() {StudentId = 2, SchoolSubjectId = 5 },
+                    new StudentsSchoolSubjects() {StudentId = 3, SchoolSubjectId = 1 },
+                    new StudentsSchoolSubjects() {StudentId = 3, SchoolSubjectId = 2 },
+                    new StudentsSchoolSubjects() {StudentId = 3, SchoolSubjectId = 3 },
+                    new StudentsSchoolSubjects() {StudentId = 4, SchoolSubjectId = 1 },
+                    new StudentsSchoolSubjects() {StudentId = 4, SchoolSubjectId = 4 },
+                    new StudentsSchoolSubjects() {StudentId = 4, SchoolSubjectId = 5 },
+                    new StudentsSchoolSubjects() {StudentId = 5, SchoolSubjectId = 4 },
+                    new StudentsSchoolSubjects() {StudentId = 5, SchoolSubjectId = 5 },
+                    new StudentsSchoolSubjects() {StudentId = 6, SchoolSubjectId = 1 },
+                    new StudentsSchoolSubjects() {StudentId = 6, SchoolSubjectId = 2 },
+                    new StudentsSchoolSubjects() {StudentId = 6, SchoolSubjectId = 3 },
+                    new StudentsSchoolSubjects() {StudentId = 6, SchoolSubjectId = 4 },
+                    new StudentsSchoolSubjects() {StudentId = 7, SchoolSubjectId = 1 },
+                    new StudentsSchoolSubjects() {StudentId = 7, SchoolSubjectId = 2 },
+                    new StudentsSchoolSubjects() {StudentId = 7, SchoolSubjectId = 3 },
+                    new StudentsSchoolSubjects() {StudentId = 7, SchoolSubjectId = 4 },
+                    new StudentsSchoolSubjects() {StudentId = 7, SchoolSubjectId = 5 }
                 });
         }
     }

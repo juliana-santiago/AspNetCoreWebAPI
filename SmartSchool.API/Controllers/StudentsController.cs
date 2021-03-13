@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SmartSchool.API.Data;
 using SmartSchool.API.Models;
 using System.Collections.Generic;
@@ -17,72 +18,72 @@ namespace SmartSchool.API.Controllers
             _context = context;
         }
 
-        // api/alunos -> todos os alunos
+        // api/students -> todos os estudantes
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_context.Alunos);
+            return Ok(_context.Students);
         }
 
-        // api/alunos/byId/{id} -> filtra por Id 
+        // api/students/byId/{id} -> filtra por Id 
         [HttpGet("byId/{id}")]
         public IActionResult GetById(int id)
         {
-            var aluno = _context.Alunos.FirstOrDefault(a => a.Id == id);
-            if (aluno == null) return BadRequest("Aluno não foi encontrado!");
+            var student = _context.Students.FirstOrDefault(a => a.Id == id);
+            if (student == null) return BadRequest("Aluno não foi encontrado!");
 
-            return Ok(aluno);
+            return Ok(student);
         }
 
-        // api/alunos/byNome/{nome}&{sobrenome} -> filtra por Nome
-        [HttpGet("byNome/{nome}&{sobrenome}")]
-        public IActionResult GetByNome(string nome, string sobrenome)
+        // api/students/byName/{name}&{surname} -> filtra por Nome
+        [HttpGet("byName/{name}&{surname}")]
+        public IActionResult GetByNome(string name, string surname)
         {
-            var aluno = _context.Alunos.FirstOrDefault(a => a.Nome.Contains(nome) && a.Sobrenome.Contains(sobrenome));
-            if (aluno == null) return BadRequest("Aluno não foi encontrado!");
+            var student = _context.Students.FirstOrDefault(a => a.Name.Contains(name) && a.Surname.Contains(surname));
+            if (student == null) return BadRequest("Aluno não foi encontrado!");
 
-            return Ok(aluno);
+            return Ok(student);
         }
 
-        // api/alunos -> Insere um novo registro
+        // api/students -> Insere um novo registro
         [HttpPost]
-        public IActionResult Post(Student aluno)
+        public IActionResult Post(Student student)
         {
-            _context.Add(aluno);
+            _context.Add(student);
             _context.SaveChanges();
-            return Ok(aluno);
+            return Ok(student);
         }
 
-        // api/alunos -> Atualiza um registro por Id
+        // api/students -> Atualiza um registro por Id
         [HttpPut("{id}")]
-        public IActionResult Put(int id, Student aluno)
+        public IActionResult Put(int id, Student student)
         {
-            var alu = _context.Alunos.FirstOrDefault(a => a.Id == id);
+            var alu = _context.Students.AsNoTracking().FirstOrDefault(a => a.Id == id);
             if (alu == null) return BadRequest("Aluno nao encontrado!");
-            _context.Update(aluno);
+            _context.Update(student);
             _context.SaveChanges();
-            return Ok(aluno);
+            return Ok(student);
         }
 
 
-        // api/alunos -> Atualiza uma informação especifica do registro por Id
+        // api/students -> Atualiza uma informação especifica do registro por Id
         [HttpPatch("{id}")]
-        public IActionResult Patch(int id, Student aluno)
+        public IActionResult Patch(int id, Student student)
         {
-            var alu = _context.Alunos.FirstOrDefault(a => a.Id == id);
+            var alu = _context.Students.AsNoTracking().FirstOrDefault(a => a.Id == id);
             if (alu == null) return BadRequest("Aluno nao encontrado!");
-            _context.Update(aluno);
+            _context.Update(student);
             _context.SaveChanges();
-            return Ok(aluno);
+            return Ok(student);
         }
 
-        // api/alunos -> Deleta um registro por Id
+        // api/students -> Deleta um registro por Id
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var aluno = _context.Alunos.FirstOrDefault(a => a.Id == id);
-            if (aluno == null) return BadRequest("Aluno nao encontrado!");
-            _context.Remove(aluno);
+            var student = _context.Students.FirstOrDefault(a => a.Id == id);
+            if (student == null) return BadRequest("Aluno nao encontrado!");
+            _context.Remove(student);
             _context.SaveChanges();
             return Ok($"Registro {id} deletado com sucesso!");
         }

@@ -1,25 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SmartSchool.API.Models
 {
     public class Student
     {
         public Student() {}
-        public Student(int id, string nome, string sobrenome, string telefone)
+        public Student(int id, string name, string surname, string phone)
         {
             this.Id = id;
-            this.Nome = nome;
-            this.Sobrenome = sobrenome;
-            this.Telefone = telefone;
+            this.Name = name;
+            this.Surname = surname;
+            this.Phone = phone;
         }
 
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Sobrenome { get; set; }
-        public string Telefone { get; set; }
-        public IEnumerable<StudentsSchoolSubjects> AlunosDisciplinas { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Phone { get; set; }
+        public IEnumerable<StudentsSchoolSubjects> StudentsSchoolSubjects { get; set; }
     }
 }

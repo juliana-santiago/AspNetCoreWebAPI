@@ -9,14 +9,14 @@ namespace SmartSchool.API.Models
     {
         public Teacher(){ }
 
-        public Teacher(int id, string nome)
+        public Teacher(int id, string name)
         {
             Id = id;
-            Nome = nome;
+            Name = name;
         }
 
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public IEnumerable<SchoolSubjects> Disciplinas { get; set; }
+        public string Name { get; set; }
+        public IEnumerable<SchoolSubject> SchoolSubjects { get; set; }
     }
 }

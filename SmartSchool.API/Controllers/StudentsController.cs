@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using SmartSchool.API.Data;
 using SmartSchool.API.Models;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace SmartSchool.API.Controllers
@@ -64,7 +63,6 @@ namespace SmartSchool.API.Controllers
             _context.SaveChanges();
             return Ok(student);
         }
-
 
         // api/students -> Atualiza uma informação especifica do registro por Id
         [HttpPatch("{id}")]

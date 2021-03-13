@@ -280,7 +280,7 @@ namespace SmartSchool.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Teacheres");
+                    b.ToTable("Teachers");
 
                     b.HasData(
                         new

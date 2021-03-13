@@ -8,7 +8,7 @@ using SmartSchool.API.Data;
 namespace SmartSchool.API.Migrations
 {
     [DbContext(typeof(SmartContext))]
-    [Migration("20210313205142_InitialMigration")]
+    [Migration("20210313212039_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -282,7 +282,7 @@ namespace SmartSchool.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Teacheres");
+                    b.ToTable("Teachers");
 
                     b.HasData(
                         new

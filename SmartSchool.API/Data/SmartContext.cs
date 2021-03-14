@@ -10,7 +10,7 @@ namespace SmartSchool.API.Data
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
-        public DbSet<SchoolSubject> SchoolSubject { get; set; }
+        public DbSet<SchoolSubject> SchoolSubjects { get; set; }
         public DbSet<StudentsSchoolSubjects> StudentsSchoolSubjects { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)

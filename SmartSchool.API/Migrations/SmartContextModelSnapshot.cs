@@ -31,7 +31,7 @@ namespace SmartSchool.API.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("SchoolSubject");
+                    b.ToTable("SchoolSubjects");
 
                     b.HasData(
                         new

@@ -35,7 +35,7 @@ namespace SmartSchool.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SchoolSubject",
+                name: "SchoolSubjects",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -45,9 +45,9 @@ namespace SmartSchool.API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SchoolSubject", x => x.Id);
+                    table.PrimaryKey("PK_SchoolSubjects", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SchoolSubject_Teachers_TeacherId",
+                        name: "FK_SchoolSubjects_Teachers_TeacherId",
                         column: x => x.TeacherId,
                         principalTable: "Teachers",
                         principalColumn: "Id",
@@ -65,9 +65,9 @@ namespace SmartSchool.API.Migrations
                 {
                     table.PrimaryKey("PK_StudentsSchoolSubjects", x => new { x.StudentId, x.SchoolSubjectId });
                     table.ForeignKey(
-                        name: "FK_StudentsSchoolSubjects_SchoolSubject_SchoolSubjectId",
+                        name: "FK_StudentsSchoolSubjects_SchoolSubjects_SchoolSubjectId",
                         column: x => x.SchoolSubjectId,
-                        principalTable: "SchoolSubject",
+                        principalTable: "SchoolSubjects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -139,27 +139,27 @@ namespace SmartSchool.API.Migrations
                 values: new object[] { 5, "Alexandre" });
 
             migrationBuilder.InsertData(
-                table: "SchoolSubject",
+                table: "SchoolSubjects",
                 columns: new[] { "Id", "Name", "TeacherId" },
                 values: new object[] { 1, "Math", 1 });
 
             migrationBuilder.InsertData(
-                table: "SchoolSubject",
+                table: "SchoolSubjects",
                 columns: new[] { "Id", "Name", "TeacherId" },
                 values: new object[] { 2, "Physics", 2 });
 
             migrationBuilder.InsertData(
-                table: "SchoolSubject",
+                table: "SchoolSubjects",
                 columns: new[] { "Id", "Name", "TeacherId" },
                 values: new object[] { 3, "Portuguese", 3 });
 
             migrationBuilder.InsertData(
-                table: "SchoolSubject",
+                table: "SchoolSubjects",
                 columns: new[] { "Id", "Name", "TeacherId" },
                 values: new object[] { 4, "English", 4 });
 
             migrationBuilder.InsertData(
-                table: "SchoolSubject",
+                table: "SchoolSubjects",
                 columns: new[] { "Id", "Name", "TeacherId" },
                 values: new object[] { 5, "Biology", 5 });
 
@@ -279,8 +279,8 @@ namespace SmartSchool.API.Migrations
                 values: new object[] { 7, 5 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_SchoolSubject_TeacherId",
-                table: "SchoolSubject",
+                name: "IX_SchoolSubjects_TeacherId",
+                table: "SchoolSubjects",
                 column: "TeacherId");
 
             migrationBuilder.CreateIndex(
@@ -295,7 +295,7 @@ namespace SmartSchool.API.Migrations
                 name: "StudentsSchoolSubjects");
 
             migrationBuilder.DropTable(
-                name: "SchoolSubject");
+                name: "SchoolSubjects");
 
             migrationBuilder.DropTable(
                 name: "Students");

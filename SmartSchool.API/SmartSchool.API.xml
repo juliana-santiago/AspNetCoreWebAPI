@@ -1,0 +1,538 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartSchool.API</name>
+    </assembly>
+    <members>
+        <member name="T:SmartSchool.API.Version1.Controllers.StudentsController">
+            <summary>
+            Versão 1 do controlador de Alunos.
+            </summary>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.StudentsController.#ctor(SmartSchool.API.Data.IRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="repository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.StudentsController.Get">
+            <summary>
+            Método responsável por retornar todos os meus alunos.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.StudentsController.GetById(System.Int32)">
+            <summary>
+            Método responsável por retornar apenas um aluno por meio do ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.StudentsController.Post(SmartSchool.API.Version1.DTO.RegisterStudentDTO)">
+            <summary>
+            Método responsável por inserir um novo aluno.
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.StudentsController.Put(System.Int32,SmartSchool.API.Version1.DTO.RegisterStudentDTO)">
+            <summary>
+            Método responsável por atualizar um aluno através do seu ID.
+            </summary>
+            <param name="id"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.StudentsController.Patch(System.Int32,SmartSchool.API.Version1.DTO.RegisterStudentDTO)">
+            <summary>
+            Método responsável por atualizar um aluno através do seu ID.
+            </summary>
+            <param name="id"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.StudentsController.Delete(System.Int32)">
+            <summary>
+            Método responsável por deletar um aluno através do seu ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartSchool.API.Version1.Controllers.TeachersController">
+            <summary>
+            Versão 1 do controlador de Professores.
+            </summary>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.TeachersController.#ctor(SmartSchool.API.Data.IRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="repository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.TeachersController.Get">
+            <summary>
+            Método responsável por retornar todos os meus professor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.TeachersController.GetById(System.Int32)">
+            <summary>
+            Método responsável por retornar apenas um professor por meio do ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.TeachersController.Post(SmartSchool.API.Version1.DTO.RegisterTeacherDTO)">
+            <summary>
+            Método responsável por inserir um novo professor.
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.TeachersController.Put(System.Int32,SmartSchool.API.Version1.DTO.RegisterTeacherDTO)">
+            <summary>
+            Método responsável por atualizar um professor através do seu ID.
+            </summary>
+            <param name="id"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.TeachersController.Patch(System.Int32,SmartSchool.API.Version1.DTO.RegisterTeacherDTO)">
+            <summary>
+            Método responsável por atualizar um professor através do seu ID.
+            </summary>
+            <param name="id"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version1.Controllers.TeachersController.Delete(System.Int32)">
+            <summary>
+            Método responsável por deletar um professor através do seu ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartSchool.API.Version1.DTO.RegisterStudentDTO">
+            <summary>
+            Este é o DTO do Aluno para Registrar
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterStudentDTO.Id">
+            <summary>
+            Identificador e chave do Banco.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterStudentDTO.Registration">
+            <summary>
+            Chave do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterStudentDTO.Name">
+            <summary>
+            Primeiro nome.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterStudentDTO.Surname">
+            <summary>
+            Sobrenome do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterStudentDTO.Phone">
+            <summary>
+            Telefone do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterStudentDTO.BirthDate">
+            <summary>
+            Data de nascimento do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterStudentDTO.StartDate">
+            <summary>
+            Data de inicio do curso do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterStudentDTO.FinalDate">
+            <summary>
+            Data de conclusão do curso do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterStudentDTO.Active">
+            <summary>
+            Ativar ou não o Aluno.
+            </summary>
+        </member>
+        <member name="T:SmartSchool.API.Version1.DTO.RegisterTeacherDTO">
+            <summary>
+            Este é o DTO do Professor para Registrar
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterTeacherDTO.Id">
+            <summary>
+            Identificador e chave do Banco.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterTeacherDTO.Registration">
+            <summary>
+            Chave do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterTeacherDTO.Name">
+            <summary>
+            Primeiro nome do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterTeacherDTO.Surname">
+            <summary>
+            Sobrenome do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterTeacherDTO.Phone">
+            <summary>
+            Telefone do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterTeacherDTO.StartDate">
+            <summary>
+            Data de inicio do curso que o Professor leciona.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterTeacherDTO.FinalDate">
+            <summary>
+            Data de conclusão do curso que o Professor leciona.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.RegisterTeacherDTO.Active">
+            <summary>
+            Ativar ou não o Professor.
+            </summary>
+        </member>
+        <member name="T:SmartSchool.API.Version1.DTO.StudentDTO">
+            <summary>
+            Este é o DTO do aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.StudentDTO.Id">
+            <summary>
+            Identificador e chave do Banco.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.StudentDTO.Registration">
+            <summary>
+            Chave do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.StudentDTO.Name">
+            <summary>
+            Nome é o Primeiro nome e o Sobrenome do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.StudentDTO.Phone">
+            <summary>
+            Telefone do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.StudentDTO.Age">
+            <summary>
+            Esta idade é o cálculo relacionado a data de nascimento do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.StudentDTO.StartDate">
+            <summary>
+            Data de inicio do curso do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.StudentDTO.Active">
+            <summary>
+            Ativar ou não o Aluno.
+            </summary>
+        </member>
+        <member name="T:SmartSchool.API.Version1.DTO.TeacherDTO">
+            <summary>
+            Este é o DTO do Professor
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.TeacherDTO.Id">
+            <summary>
+            Identificador e chave do Banco.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.TeacherDTO.Registration">
+            <summary>
+            Chave do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.TeacherDTO.Name">
+            <summary>
+            Nome é o Primeiro nome e o Sobrenome do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.TeacherDTO.Phone">
+            <summary>
+            Telefone do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.TeacherDTO.StartDate">
+            <summary>
+            Data de inicio do curso que o Professor leciona.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version1.DTO.TeacherDTO.Active">
+            <summary>
+            Ativar ou não o Professor.
+            </summary>
+        </member>
+        <member name="T:SmartSchool.API.Version2.Controllers.StudentsController">
+            <summary>
+            Versão 2 do controlador de Alunos.
+            </summary>
+        </member>
+        <member name="M:SmartSchool.API.Version2.Controllers.StudentsController.#ctor(SmartSchool.API.Data.IRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="repository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SmartSchool.API.Version2.Controllers.StudentsController.Get">
+            <summary>
+            Método responsável por retornar todos os meus alunos.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version2.Controllers.StudentsController.Post(SmartSchool.API.Version2.DTO.RegisterStudentDTO)">
+            <summary>
+            Método responsável por inserir um novo aluno.
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version2.Controllers.StudentsController.Patch(System.Int32,SmartSchool.API.Version2.DTO.RegisterStudentDTO)">
+            <summary>
+            Método responsável por atualizar um aluno através do seu ID.
+            </summary>
+            <param name="id"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version2.Controllers.StudentsController.Delete(System.Int32)">
+            <summary>
+            Método responsável por deletar um aluno através do seu ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartSchool.API.Version2.Controllers.TeachersController">
+            <summary>
+            Versão 2 do controlador de Professores.
+            </summary>
+        </member>
+        <member name="M:SmartSchool.API.Version2.Controllers.TeachersController.#ctor(SmartSchool.API.Data.IRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="repository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SmartSchool.API.Version2.Controllers.TeachersController.Get">
+            <summary>
+            Método responsável por retornar todos os meus professor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version2.Controllers.TeachersController.Post(SmartSchool.API.Version2.DTO.RegisterTeacherDTO)">
+            <summary>
+            Método responsável por inserir um novo professor.
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version2.Controllers.TeachersController.Put(System.Int32,SmartSchool.API.Version2.DTO.RegisterTeacherDTO)">
+            <summary>
+            Método responsável por atualizar um professor através do seu ID.
+            </summary>
+            <param name="id"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.API.Version2.Controllers.TeachersController.Delete(System.Int32)">
+            <summary>
+            Método responsável por deletar um professor através do seu ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartSchool.API.Version2.DTO.RegisterStudentDTO">
+            <summary>
+            Este é o DTO do Aluno para Registrar
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterStudentDTO.Id">
+            <summary>
+            Identificador e chave do Banco.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterStudentDTO.Registration">
+            <summary>
+            Chave do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterStudentDTO.Name">
+            <summary>
+            Primeiro nome.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterStudentDTO.Surname">
+            <summary>
+            Sobrenome do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterStudentDTO.Phone">
+            <summary>
+            Telefone do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterStudentDTO.BirthDate">
+            <summary>
+            Data de nascimento do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterStudentDTO.StartDate">
+            <summary>
+            Data de inicio do curso do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterStudentDTO.FinalDate">
+            <summary>
+            Data de conclusão do curso do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterStudentDTO.Active">
+            <summary>
+            Ativar ou não o Aluno.
+            </summary>
+        </member>
+        <member name="T:SmartSchool.API.Version2.DTO.RegisterTeacherDTO">
+            <summary>
+            Este é o DTO do Professor para Registrar
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterTeacherDTO.Id">
+            <summary>
+            Identificador e chave do Banco.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterTeacherDTO.Registration">
+            <summary>
+            Chave do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterTeacherDTO.Name">
+            <summary>
+            Primeiro nome do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterTeacherDTO.Surname">
+            <summary>
+            Sobrenome do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterTeacherDTO.Phone">
+            <summary>
+            Telefone do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterTeacherDTO.StartDate">
+            <summary>
+            Data de inicio do curso que o Professor leciona.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterTeacherDTO.FinalDate">
+            <summary>
+            Data de conclusão do curso que o Professor leciona.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.RegisterTeacherDTO.Active">
+            <summary>
+            Ativar ou não o Professor.
+            </summary>
+        </member>
+        <member name="T:SmartSchool.API.Version2.DTO.StudentDTO">
+            <summary>
+            Este é o DTO do aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.StudentDTO.Id">
+            <summary>
+            Identificador e chave do Banco.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.StudentDTO.Registration">
+            <summary>
+            Chave do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.StudentDTO.Name">
+            <summary>
+            Nome é o Primeiro nome e o Sobrenome do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.StudentDTO.Phone">
+            <summary>
+            Telefone do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.StudentDTO.Age">
+            <summary>
+            Esta idade é o cálculo relacionado a data de nascimento do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.StudentDTO.StartDate">
+            <summary>
+            Data de inicio do curso do Aluno.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.StudentDTO.Active">
+            <summary>
+            Ativar ou não o Aluno.
+            </summary>
+        </member>
+        <member name="T:SmartSchool.API.Version2.DTO.TeacherDTO">
+            <summary>
+            Este é o DTO do Professor
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.TeacherDTO.Id">
+            <summary>
+            Identificador e chave do Banco.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.TeacherDTO.Registration">
+            <summary>
+            Chave do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.TeacherDTO.Name">
+            <summary>
+            Nome é o Primeiro nome e o Sobrenome do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.TeacherDTO.Phone">
+            <summary>
+            Telefone do Professor.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.TeacherDTO.StartDate">
+            <summary>
+            Data de inicio do curso que o Professor leciona.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.API.Version2.DTO.TeacherDTO.Active">
+            <summary>
+            Ativar ou não o Professor.
+            </summary>
+        </member>
+    </members>
+</doc>
